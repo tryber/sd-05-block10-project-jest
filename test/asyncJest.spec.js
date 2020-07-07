@@ -11,18 +11,25 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe("o retorno do telefonema", () => {
-  let ligando = jest.spyOn( answerPhone, 'answerPhone');
+  let ligando = jest.spyOn( { answerPhone }, 'answerPhone');
+  const retornos = {
+    atende: 'Hello, its me!',
+    ocupado: 'Tuuu, tuuuu, tuuu!',
+  }
   afterEach(() => {
     ligando.mockRestore();
-    ligando = jest.spyOn(answerPhone, 'answerPhone');
+    ligando = jest.spyOn({ answerPhone }, 'answerPhone');
   });
 
-  test("atende", () => {
-    assert.fail();
-    // Insira seu teste assíncrono aqui
-
-
+  test("atende", async () => {
+    ligando.mockResolvedValue(retornos.atende);
+    ligando();
+    expect(ligando).toHaveBeenCalled();
+    expect(ligando).toHaveBeenCalledTimes(1);
+    expect(ligando()).resolves.toBe(retornos.atende);
+    expect(ligando).toHaveBeenCalledTimes(2);
   });
+
   test("ocupado", () => {
     assert.fail();
     // Insira seu teste assíncrono aqui
