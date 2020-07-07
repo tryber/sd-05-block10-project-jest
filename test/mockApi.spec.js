@@ -23,7 +23,33 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('verifica o usuário', () => {
-  // Crie sua mock da função fetchURL() aqui
+  api.fetchURL = jest.fn()
+  .mockResolvedValue({
+    gender: 'male',
+    name: { title: 'Mr', first: 'Antônio', last: 'Britto' },
+    location: {
+      street: { number: 1299, name: 'Rochestown Road' },
+      city: 'Birr',
+      state: 'Wicklow',
+      country: 'Brazil',
+      postcode: 16223,
+      coordinates: { latitude: '26.2451', longitude: '45.2995' },
+      timezone: {
+        offset: '+5:30',
+        description: 'Bombay, Calcutta, Madras, New Delhi'
+      }
+    },
+    email: 'tunico@bol.com.br',
+    login: {
+      uuid: '45db2b1f-1c9a-4a80-9572-e46614f86c30',
+      username: 'tunicao123',
+      password: '1234567890',
+      salt: 'XKOOGc2x',
+      md5: '8cb7b4686f3869247b3ed189de780ea6',
+      sha1: 'c24641f415cf36f4494ea4007fb3d77b47a6aad5',
+      sha256: 'a7bdd079ead0adf21f30cee5b94e5581a9fa0d5fc8b3c1881dbc864dabc55a80'
+    }
+  });
 
   test('verifica se o usuário é o tunico', async () => {
     return api.fetchURL().then((user) => {
