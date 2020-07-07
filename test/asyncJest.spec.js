@@ -11,9 +11,17 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe("o retorno do telefonema", () => {
+  let ligando = jest.spyOn( answerPhone, 'answerPhone');
+  afterEach(() => {
+    ligando.mockRestore();
+    ligando = jest.spyOn(answerPhone, 'answerPhone');
+  });
+
   test("atende", () => {
     assert.fail();
     // Insira seu teste assíncrono aqui
+
+
   });
   test("ocupado", () => {
     assert.fail();
