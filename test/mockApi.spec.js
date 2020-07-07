@@ -38,7 +38,7 @@ describe('verifica o usuário', () => {
     login: {
       username: 'tunicao123',
       password: '1234567890',
-    },
+    }
   };
 
   api.fetchURL = jest.fn().mockResolvedValue(tunico);
