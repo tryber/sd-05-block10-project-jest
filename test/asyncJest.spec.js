@@ -14,11 +14,11 @@ describe("o retorno do telefonema", () => {
   test("atende", async () => {
     // assert.fail();
     // Insira seu teste assíncrono aqui
-    await expect(answerPhone(true).resolves.toEqual('Oi!'));
+    await expect(answerPhone(true)).resolves.toEqual('Oi!');
   });
-  test("ocupado", () => {
+  test("ocupado", async () => {
     // assert.fail();
     // Insira seu teste assíncrono aqui
-    await expect(answerPhone(false).rejects.toEqual('Infelizmente não podemos atender...'));
+    await expect(answerPhone(false)).rejects.toEqual('Infelizmente não podemos atender...');
   });
 });
