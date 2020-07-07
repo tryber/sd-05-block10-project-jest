@@ -12,12 +12,10 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 describe("o retorno do telefonema", () => {
   test("atende", async () => {
-    // Insira seu teste assíncrono aqui
     const hello = await answerPhone(true);
     expect(hello).toEqual('Oi!');
   });
   test("ocupado", async () => {
-    // Insira seu teste assíncrono aqui
     try {
       await answerPhone(false);
     } catch(error) {
