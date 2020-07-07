@@ -16,7 +16,7 @@ describe("o retorno do telefonema", () => {
     await expect(answerPhone(true)).resolves.toEqual('Oi!');
   });
   test("ocupado", async() => {
-    await expect(answerPhone(false)).rejects.toEqual('Infelizmente não podemos atender...')
+    await expect(answerPhone(false)).rejects.toEqual('Infelizmente não podemos atender...');
     // Ins ira seu teste assíncrono aqui
   });
 });
