@@ -10,17 +10,17 @@ a função recebe como parâmetro true e false, respectivamente.
 ATENÇÃO! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
-describe("o retorno do telefonema", () => {
-  test("atende", () => {
+describe('o retorno do telefonema', () => {
+  test('atende', () => {
     return answerPhone(true).then((data) => {
-      expect(data).toBe("Oi!");
+      expect(data).toBe('Oi!');
     });
     // Insira seu teste assíncrono aqui
   });
-  test("ocupado", () => {
+  test('ocupado', () => {
     expect.assertions(1);
     return answerPhone(false).catch((data) => {
-      expect(data).toMatch("Infelizmente não podemos atender...");
+      expect(data).toMatch('Infelizmente não podemos atender...');
     });
     // Insira seu teste assíncrono aqui
   });
