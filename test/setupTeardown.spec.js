@@ -24,12 +24,16 @@ describe('quem sobreviveu?', () => {
   // Adicione seu código aqui
   beforeEach(() => randomAttack());
   afterEach(() => {
-    adventure.specialists.forEach(aventureiro => {
-      console.log(`${aventureiro.nome}, the ${aventureiro.classe} is still alive`);
-    })
-  })
-  afterAll(() => console.log(`${adventure.specialists[0].nome}, the ${adventure.specialists[0].classe} has survived`));
-  
+    const survivedGroup = [];
+    adventure.specialists.forEach((aventureiro) => {
+      survivedGroup.push(`${aventureiro.nome}`);
+      survivedGroup.push(`the ${aventureiro.classe}`);
+    });
+    if (survivedGroup.length === 2) return;
+    console.log(`${survivedGroup.join(', ')}, are still alive.`);
+  });
+  afterAll(() => console.log(`${adventure.specialists[0].nome}, the ${adventure.specialists[0].classe} has survived.`));
+
   test('depois da primeira aventura', () => {
     expect(adventure.specialists.length).toBe(5);
   });
