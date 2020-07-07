@@ -25,12 +25,14 @@ describe('quem sobreviveu?', () => {
     adventure.randomAttack();
   }); 
 
-  afterEach(() =>
+  afterEach(() => {
     console.log('ainda vivos:', adventure.specialists.map(caras => caras.nome))
-  );
+    console.log(adventure.specialists.length)
+  });
 
-  afterAll( () =>
-    console.log(`o aventureiro sobrevivente é: ${adventure.specialists[0]}`));
+  afterAll( () => {
+    console.log(`o aventureiro sobrevivente é: ${adventure.specialists[0]}`)
+  });
 
 
   test('depois da primeira aventura', () => {
