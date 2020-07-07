@@ -31,7 +31,13 @@ describe("o retorno do telefonema", () => {
   });
 
   test("ocupado", () => {
-    assert.fail();
+    // assert.fail();
     // Insira seu teste assíncrono aqui
+    ligando.mockRejectedValue(retornos.ocupado);
+    ligando();
+    expect(ligando).toHaveBeenCalled();
+    expect(ligando).toHaveBeenCalledTimes(1);
+    expect(ligando()).rejects.toBe(retornos.ocupado);
+    expect(ligando).toHaveBeenCalledTimes(2);
   });
 });
