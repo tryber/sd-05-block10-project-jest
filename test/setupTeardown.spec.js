@@ -21,6 +21,20 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 describe('quem sobreviveu?', () => {
   // Adicione seu código aqui
+  beforeEach(() => {
+    adventure.randomAttack();
+  });
+
+  // mensagens opcionais
+  afterEach(() => {
+    const survivors = adventure.specialists;
+    console.log(`Full ids of these Staying alive, staying alive: ${survivors}`);
+  });
+
+  afterAll(() => {
+    const last = adventure.specialists[0].nome;
+    console.log (`The Last of Us is: ${last}`);
+  })
 
   test('depois da primeira aventura', () => {
     expect(adventure.specialists.length).toBe(5);
