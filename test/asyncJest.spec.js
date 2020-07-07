@@ -1,12 +1,12 @@
 const answerPhone = require("../src/asyncJest");
 describe("o retorno do telefonema", () => {
-  test("atende", () => {
+  test("atende", async () => {
     const ok = await answerPhone(true);
     expect(ok).toBe('Oi!');
   });
-  test("ocupado", () => {
+  test("ocupado", async () => {
     try {
-      await ok(false);
+      await answerPhone(false);
     } catch (error) {
       expect(error).toBe('Infelizmente não podemos atender...');
     }
