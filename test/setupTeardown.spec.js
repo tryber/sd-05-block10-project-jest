@@ -1,4 +1,5 @@
 const adventure = require('../src/setupTeardown');
+const { specialists } = require('../src/setupTeardown');
 /*
 Num universo não tão distante, um grupo de aventureiros da Trybe enfrentam uma série de testes.
 O grupo parte em direção ao sucesso, mas,
@@ -23,8 +24,10 @@ describe('quem sobreviveu?', () => {
   beforeEach(() => adventure.randomAttack());
   afterAll(() => {
     console.log(`${randomSpecialist.nome}, the ${randomSpecialist.classe} has been ${randomMonster.ataque} by a ${randomMonster.nome}`);
-
-    console.log(`Rest in peace, ${randomSpecialist.nome}...`);
+  });
+  afterEach(() => {
+    const heroes = adventure.specialists.map(hero => hero.nome);
+    console.log(heroes);
   });
 
   test('depois da primeira aventura', () => {
