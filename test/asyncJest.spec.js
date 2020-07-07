@@ -12,7 +12,7 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 describe("o retorno do telefonema", () => {
   test("atende", async () => {
-    await expect(Promise.resolve(answerPhone(true)).then('Oi!'));
+    expect(Promise.resolve(answerPhone(true)).then('Oi!'));
   })
   test("ocupado", async () => {
     try {
