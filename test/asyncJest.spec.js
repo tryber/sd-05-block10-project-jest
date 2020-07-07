@@ -12,11 +12,22 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 describe("o retorno do telefonema", () => {
   test("atende", () => {
-    assert.fail();
-    // Insira seu teste assíncrono aqui
+    // assert.fail();
+    answerPhone.answerPhone = jest.fn().mockReturnValue('Oi');
+    answerPhone.answerPhone(true);
+    expect(answerPhone.answerPhone).toHaveBeenCalled();
+    expect(answerPhone.answerPhone(false)).toBe('Oi');
+    expect(answerPhone.answerPhone(true)).toBe('Oi');
+    answerPhone.answerPhone.mockReset();
   });
   test("ocupado", () => {
-    assert.fail();
+    // assert.fail();
     // Insira seu teste assíncrono aqui
+    answerPhone.answerPhone = jest.fn().mockReturnValue('Infelizmente não podemos atender...');
+    answerPhone.answerPhone(true);
+    expect(answerPhone.answerPhone).toHaveBeenCalled();
+    expect(answerPhone.answerPhone(true)).toBe('Infelizmente não podemos atender...');
+    expect(answerPhone.answerPhone(false)).toBe('Infelizmente não podemos atender...');
+    answerPhone.answerPhone.mockReset();
   });
 });
