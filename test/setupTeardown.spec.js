@@ -28,12 +28,12 @@ describe('quem sobreviveu?', () => {
   });
 
   // afterEach((done) => {
-  //   console.log('teste', adventure.specialists[1]);
+  //   console.log('teste', adventure.specialists[0]);
   //   done();
   // });
 
   afterAll((done) => {
-    console.log('o ganhador é', adventure.specialists);
+    console.log('o ganhador é', adventure.specialists[0].nome + ', ' + adventure.specialists[0].classe);
     done();
   });
 

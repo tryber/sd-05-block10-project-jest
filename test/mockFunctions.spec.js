@@ -92,13 +92,13 @@ describe('verifica as funções e os mocks', () => {
   });
 
   test('testa função factorial', () => {
-    mockFunctions.factorial.mockImplementation((valor) => {
-    if ( (valor == 0) || (valor == 1) ) {
+    mockFunctions.factorial.mockImplementation((a) => {
+    if ( (a == 0) || (a == 1) ) {
         return 1;
       } else {
         var acumula = 1;
-        for(x=valor;x>1;x--) {
-          acumula = acumula * x;
+        for(let i = a; i > 1; i--) {
+          acumula = acumula * i;
         }
 
         return acumula;
