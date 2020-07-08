@@ -21,11 +21,15 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 describe('quem sobreviveu?', () => {
   // Adicione seu código aqui
-  beforeEach(() => {
-    console.log(adventure);
+
+  beforeEach((done) => {
+    console.log(adventure.specialists.length);
+    done();
   });
-  afterEach(() => {
-    adventure.randomAttack();
+
+  afterEach((done) => {
+    console.log(adventure.randomAttack());
+    done();
   });
   test('depois da primeira aventura', () => {
     expect(adventure.specialists.length).toBe(5);
