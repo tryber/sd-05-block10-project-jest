@@ -23,7 +23,7 @@ describe('quem sobreviveu?', () => {
   // Adicione seu código aqui
 
   beforeEach((done) => {
-    console.log(adventure.randomAttack());
+    adventure.randomAttack();
     done();
   });
 
