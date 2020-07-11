@@ -21,20 +21,29 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 describe('quem sobreviveu?', () => {
   // Adicione seu código aqui
-
   test('depois da primeira aventura', () => {
+    await adventure.randomAttack();
+    await console.log(adventure.specialists);
     expect(adventure.specialists.length).toBe(5);
   });
   test('depois da segunda aventura', () => {
+    await adventure.randomAttack();
+    await console.log(adventure.specialists);
     expect(adventure.specialists.length).toBe(4);
   });
   test('depois da terceira aventura', () => {
+    await adventure.randomAttack();
+    await console.log(adventure.specialists);
     expect(adventure.specialists.length).toBe(3);
   });
   test('depois da quarta aventura', () => {
+    await adventure.randomAttack();
+    await console.log(adventure.specialists);
     expect(adventure.specialists.length).toBe(2);
   });
   test('depois da quinta aventura', () => {
+    await adventure.randomAttack();
+    await console.log(adventure.specialists);
     expect(adventure.specialists.length).toBe(1);
   });
 });
