@@ -24,26 +24,26 @@ describe('quem sobreviveu?', () => {
   test('depois da primeira aventura', () => {
     await adventure.randomAttack();
     await console.log(adventure.specialists);
-    expect(adventure.specialists.length).toBe(5);
+    await expect(adventure.specialists.length).toBe(5);
   });
   test('depois da segunda aventura', () => {
     await adventure.randomAttack();
     await console.log(adventure.specialists);
-    expect(adventure.specialists.length).toBe(4);
+    await expect(adventure.specialists.length).toBe(4);
   });
   test('depois da terceira aventura', () => {
     await adventure.randomAttack();
     await console.log(adventure.specialists);
-    expect(adventure.specialists.length).toBe(3);
+    await expect(adventure.specialists.length).toBe(3);
   });
   test('depois da quarta aventura', () => {
     await adventure.randomAttack();
     await console.log(adventure.specialists);
-    expect(adventure.specialists.length).toBe(2);
+    await expect(adventure.specialists.length).toBe(2);
   });
   test('depois da quinta aventura', () => {
     await adventure.randomAttack();
     await console.log(adventure.specialists);
-    expect(adventure.specialists.length).toBe(1);
+    await expect(adventure.specialists.length).toBe(1);
   });
 });
