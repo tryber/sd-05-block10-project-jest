@@ -23,7 +23,7 @@ describe('verifica as funções e os mocks', () => {
   mockFunctions.divide.mockImplementation((a, b) => a / b);
   mockFunctions.factorial.mockImplementation(a => {
     let factorial = 1;
-    for (let i = 1; i > a; i += 1) {
+    for (let i = 1; i <= a; i += 1) {
       factorial *= i;
     }
     return factorial;
