@@ -26,13 +26,12 @@ describe('quem sobreviveu?', () => {
     await console.log(adventure.specialists);
     await expect(adventure.specialists.length).toBe(5);
   });
-  
 
   test('depois da segunda aventura', async () => {
     await adventure.randomAttack();
     await console.log(adventure.specialists);
     await expect(adventure.specialists.length).toBe(4);
-  }); 
+  });
 
   test('depois da terceira aventura', async () => {
     await adventure.randomAttack();
@@ -40,7 +39,6 @@ describe('quem sobreviveu?', () => {
     await expect(adventure.specialists.length).toBe(3);
   });
 
- 
   test('depois da quarta aventura', async () => {
     await adventure.randomAttack();
     await console.log(adventure.specialists);
