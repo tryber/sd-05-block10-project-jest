@@ -18,3 +18,4 @@ describe("o retorno do telefonema", () => {
   test("ocupado", () => {
       return expect(answerPhone(false)).rejects.toEqual('Infelizmente não podemos atender...');
   });
+ 
