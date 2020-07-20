@@ -31,8 +31,8 @@ describe('quem sobreviveu?', () => {
   });
 
   afterEach(() => {
-    console.log(`Ultimo especialista em pé: ${adventure.specialists[0].nome}`)
-  })
+    console.log(`Ultimo especialista em pé: ${adventure.specialists[0].nome}`);
+  });
 
   test('depois da primeira aventura', () => {
     expect(adventure.specialists.length).toBe(5);
