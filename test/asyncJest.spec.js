@@ -9,14 +9,31 @@ a função recebe como parâmetro true e false, respectivamente.
 
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
-
+// describe ("string", uma função geralmente uma arrow function)
 describe("o retorno do telefonema", () => {
-  test("atende", () => {
-    assert.fail();
-    // Insira seu teste assíncrono aqui
+  test("atende com async e await", async () => {
+    // expect (função ou condição ou variavel que quer checar o valor).toBe(valor esperado) ;-)
+    expect(await answerPhone(true)).toBe('Oi!');
   });
-  test("ocupado", () => {
-    assert.fail();
-    // Insira seu teste assíncrono aqui
+  test("atende com promisse", () => {
+    return answerPhone(true).then(resposta => expect(resposta).toBe('Oi!'));
+  });
+  test("teste com resolves", () => {
+    return expect(answerPhone(true)).resolves.toEqual('Oi!')
+  });
+  test("ocupado com rejects", () => {
+    return expect(answerPhone(false)).rejects.toEqual('Infelizmente não podemos atender...')
+  });
+  test("ocupado com async e await", async () => {
+    
+    try {
+      await answerPhone(false)
+    } catch (e) {
+      expect(e).toBe('Infelizmente não podemos atender...')
+      
+    }
+  });
+  test("atende com promisse", () => {
+    return answerPhone(false).catch(resposta => expect(resposta).toBe('Infelizmente não podemos atender...'));
   });
 });
