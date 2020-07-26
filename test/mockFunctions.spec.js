@@ -63,7 +63,7 @@ describe('verifica as funções e os mocks', () => {
       for(let i = a; i >= 1; i -= 1) {
         total *= i; 
       }
-      return total
+      return total;
     });
     expect(mockFunctions.factorial(5)).toEqual(120);
     expect(mockFunctions.factorial(10)).toEqual(3628800);
